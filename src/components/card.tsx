@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Filter } from "./filter";
 import { CardProps } from "@/types";
 
@@ -14,10 +15,13 @@ export function Card({ characters, status, gender }: CardProps) {
         {characters.length > 0 ? (
           characters.map((character) => (
             <div key={character.id} className="space-y-3">
-              <img
+              <Image
                 src={character.image}
                 alt={character.name}
+                title={character.name}
                 className="w-full rounded"
+                width={500}
+                height={500}
               />
               <div>
                 <h2 className="text-2xl font-semibold">{character.name}</h2>
